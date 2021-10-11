@@ -1,0 +1,4 @@
+2021-10-11 21:02:38 [main] main.Main [main] [17] INFO  - Point{pointId=0, x=5, y=0, z=0}
+2021-10-11 21:02:38 [main] main.Main [main] [18] INFO  - false
+2021-10-11 21:02:38 [main] main.Main [main] [23] INFO  - Pyramid{pyramidId=1, points=[Point{pointId=9, x=-10, y=0, z=0}, Point{pointId=10, x=10, y=0, z=0}, Point{pointId=11, x=0, y=-10, z=0}, Point{pointId=12, x=0, y=10, z=0}, Point{pointId=13, x=0, y=0, z=10}]}
+2021-10-11 21:02:38 [main] main.Main [main] [24] INFO  - true
