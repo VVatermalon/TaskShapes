@@ -3,6 +3,9 @@ package factory;
 import entity.Point;
 import entity.Pyramid;
 
+import java.util.List;
+
 public interface PyramidFactory {
-    Pyramid create(Point point1, Point point2, Point point3, Point point4, Point top);
+    Pyramid createSimple(List<Integer> cord);
+    Pyramid create();
 }

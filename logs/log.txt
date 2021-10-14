@@ -1,5 +1,11 @@
-2021-10-11 21:54:32 [main] main.Main [main] [20] INFO  - [-5 1 0 5 1 0 -5 7 0 5 7 0 0 4 5, -3 0 0 3 0 0 0 3 0 0 -3 0 0 0, -3 0 0 3 0 0 0k 3 0 0 -3 0 0 0 3, -5 1 0 5 1 0 -5 5 0 5 5 0 0 3 5]
-2021-10-11 21:54:32 [main] main.Main [main] [28] INFO  - Point{pointId=0, x=5, y=0, z=0}
-2021-10-11 21:54:32 [main] main.Main [main] [29] INFO  - false
-2021-10-11 21:54:32 [main] main.Main [main] [34] INFO  - Pyramid{pyramidId=1, points=[Point{pointId=5, x=-10, y=0, z=0}, Point{pointId=6, x=10, y=0, z=0}, Point{pointId=7, x=0, y=-10, z=0}, Point{pointId=8, x=0, y=10, z=0}, Point{pointId=9, x=0, y=0, z=10}]}
-2021-10-11 21:54:32 [main] main.Main [main] [35] INFO  - false
+2021-10-15 00:04:37 [main] main.Main [main] [22] INFO  - [0 0 0 +5 10, -2 -2 -2 3 -3, 4 3 1 4 15, 0j 0 0 4 20, 2 2 2 2 2 2 2 2, 2 2 2 -3 2, 0 0 0 3 0, 1 1 1 0 1]
+2021-10-15 00:04:37 [main] parser.impl.PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 0j 0 0 4 20
+2021-10-15 00:04:37 [main] parser.impl.PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 2 2 2 2 2 2 2 2
+2021-10-15 00:04:37 [main] parser.impl.PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 2 2 2 -3 2
+2021-10-15 00:04:37 [main] service.impl.PyramidServiceImpl [isPyramid] [30] WARN  - One plane [Point{pointId=15, x=-1.5, y=-1.5, z=0.0}, Point{pointId=16, x=-1.5, y=1.5, z=0.0}, Point{pointId=17, x=1.5, y=1.5, z=0.0}, Point{pointId=18, x=1.5, y=-1.5, z=0.0}, Point{pointId=19, x=0.0, y=0.0, z=0.0}]
+2021-10-15 00:04:37 [main] service.impl.PyramidServiceImpl [isPyramid] [22] WARN  - Same points [Point{pointId=25, x=1.0, y=1.0, z=1.0}, Point{pointId=26, x=1.0, y=1.0, z=1.0}, Point{pointId=27, x=1.0, y=1.0, z=1.0}, Point{pointId=28, x=1.0, y=1.0, z=1.0}, Point{pointId=29, x=1.0, y=1.0, z=1.0}]
+2021-10-15 00:04:37 [main] main.Main [lambda$main$0] [26] INFO  - true
+2021-10-15 00:04:37 [main] main.Main [lambda$main$0] [26] INFO  - true
+2021-10-15 00:04:37 [main] main.Main [lambda$main$0] [26] INFO  - true
+2021-10-15 00:04:37 [main] main.Main [lambda$main$0] [26] INFO  - true
+2021-10-15 00:04:37 [main] main.Main [lambda$main$0] [26] INFO  - true

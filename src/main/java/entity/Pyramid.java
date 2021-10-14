@@ -1,20 +1,23 @@
 package entity;
 
+import service.impl.PyramidServiceImpl;
+
 import java.util.Arrays;
 
 public class Pyramid {
     private static int count = 0;
     private final int pyramidId;
     private Point[] points;
+    private static final PyramidServiceImpl service = new PyramidServiceImpl();
 
     public Pyramid(Point[] points) {
         pyramidId = count++;
-        if(points != null && points.length == 5) {
+        if(points != null && service.isPyramid(points)) {
             this.points = points.clone();
         }
-        else { // не хочу отсекать 5 элементов, если их больше, мало ли какая там вершина подразумевалась
-            this.points = new Point[] {new Point(-10, 0, 0), new Point(10, 0, 0),
-                    new Point(0, -10, 0), new Point(0, 10, 0), new Point(0, 0, 10)};
+        else {
+            this.points = new Point[]{new Point(-4, -4, 0), new Point(-4, 4, 0),
+                    new Point(4, 4, 0), new Point(4, -4, 0), new Point(0, 0, 8)};
         }
     }
 
@@ -27,25 +30,32 @@ public class Pyramid {
     }
 
     public void setPoints(Point[] points) {
-        if(points != null && points.length == 5) {
+        if(points != null && service.isPyramid(points)) {
             this.points = points.clone();
         }
         else {
-            this.points = new Point[] {new Point(-10, 0, 0), new Point(10, 0, 0),
-                    new Point(0, -10, 0), new Point(0, 10, 0), new Point(0, 0, 10)};
+            this.points = new Point[]{new Point(-4, -4, 0), new Point(-4, 4, 0),
+                    new Point(4, 4, 0), new Point(4, -4, 0), new Point(0, 0, 8)};
         }
     }
 
     @Override
     public String toString() {
-        return "Pyramid{" +
-                "pyramidId=" + pyramidId +
-                ", points=" + Arrays.toString(points) +
-                '}';
+        StringBuilder string = new StringBuilder();
+        return string.append("Pyramid{pyramidId=").append(pyramidId)
+                .append(", points=").append(Arrays.toString(points))
+                .append('}').toString();
     }
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pyramid)) return false;
+        Pyramid pyramid = (Pyramid) o;
+        return pyramidId == pyramid.pyramidId && Arrays.equals(points, pyramid.points);
+    }
+
+    public boolean equalsIgnoreId(Object o) {
         if (this == o) return true;
         if (!(o instanceof Pyramid)) return false;
         Pyramid pyramid = (Pyramid) o;

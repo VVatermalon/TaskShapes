@@ -5,18 +5,18 @@ import java.util.Objects;
 public class Point {
     private static int count = 0;
     private final int pointId;
-    private int x;
-    private int y;
-    private int z;
+    private double x;
+    private double y;
+    private double z;
 
-    public Point(int x, int y, int z) {
+    public Point(double x, double y, double z) {
         pointId = count++;
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
@@ -24,7 +24,7 @@ public class Point {
         this.x = x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
@@ -32,7 +32,7 @@ public class Point {
         this.y = y;
     }
 
-    public int getZ() {
+    public double getZ() {
         return z;
     }
 
@@ -40,22 +40,29 @@ public class Point {
         this.z = z;
     }
 
-    public int getPointId() {
+    public double getPointId() {
         return pointId;
     }
 
     @Override
     public String toString() {
-        return "Point{" +
-                "pointId=" + pointId +
-                ", x=" + x +
-                ", y=" + y +
-                ", z=" + z +
-                '}';
+        StringBuilder string = new StringBuilder();
+        return string.append("Point{pointId=").append(pointId)
+                .append(", x=").append(x)
+                .append(", y=").append(y)
+                .append(", z=").append(z)
+                .append('}').toString();
     }
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Point)) return false;
+        Point point = (Point) o;
+        return pointId == point.pointId && x == point.x && y == point.y && z == point.z;
+    }
+
+    public boolean equalsIgnoreId(Object o) {
         if (this == o) return true;
         if (!(o instanceof Point)) return false;
         Point point = (Point) o;
@@ -64,6 +71,6 @@ public class Point {
 
     @Override
     public int hashCode() {
-        return x*y*z;
+        return (int)Math.round(x * y * z);
     }
 }
