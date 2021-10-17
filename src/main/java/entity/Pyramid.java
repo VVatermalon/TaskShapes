@@ -3,48 +3,62 @@ package entity;
 import service.impl.PyramidServiceImpl;
 
 import java.util.Arrays;
+import java.util.Objects;
 
-public class Pyramid {
+public class Pyramid extends Shape {
     private static int count = 0;
-    private final int pyramidId;
-    private Point[] points;
-    private static final PyramidServiceImpl service = new PyramidServiceImpl();
+    private Point bottomCenter;
+    private Point top;
+    private int sideLength;
 
-    public Pyramid(Point[] points) {
-        pyramidId = count++;
-        if(points != null && service.isPyramid(points)) {
-            this.points = points.clone();
-        }
-        else {
-            this.points = new Point[]{new Point(-4, -4, 0), new Point(-4, 4, 0),
-                    new Point(4, 4, 0), new Point(4, -4, 0), new Point(0, 0, 8)};
-        }
+    public Pyramid(Point bottomCenter, Point top, int sideLength) {
+        shapeId = count++;
+        this.bottomCenter = bottomCenter;
+        this.top = top;
+        this.sideLength = sideLength;
     }
 
     public int getPyramidId() {
-        return pyramidId;
+        return shapeId;
     }
 
-    public Point[] getPoints() {
-        return points.clone();
+    public Point getBottomCenter() {
+        return bottomCenter;
     }
 
-    public void setPoints(Point[] points) {
-        if(points != null && service.isPyramid(points)) {
-            this.points = points.clone();
+    public void setBottomCenter(Point bottomCenter) {
+        if (bottomCenter != null) {
+            this.bottomCenter = bottomCenter;
         }
-        else {
-            this.points = new Point[]{new Point(-4, -4, 0), new Point(-4, 4, 0),
-                    new Point(4, 4, 0), new Point(4, -4, 0), new Point(0, 0, 8)};
+    }
+
+    public Point getTop() {
+        return top;
+    }
+
+    public void setTop(Point top) {
+        if(top!= null) {
+            this.top = top;
         }
+    }
+
+    public int getSideLength() {
+        return sideLength;
+    }
+
+    public void setSideLength(int sideLength) {
+        this.sideLength = sideLength;
     }
 
     @Override
     public String toString() {
-        StringBuilder string = new StringBuilder();
-        return string.append("Pyramid{pyramidId=").append(pyramidId)
-                .append(", points=").append(Arrays.toString(points))
-                .append('}').toString();
+        final StringBuffer sb = new StringBuffer("Pyramid{");
+        sb.append("bottomCenter=").append(bottomCenter);
+        sb.append(", top=").append(top);
+        sb.append(", sideLength=").append(sideLength);
+        sb.append(", shapeId=").append(shapeId);
+        sb.append('}');
+        return sb.toString();
     }
 
     @Override
@@ -52,18 +66,23 @@ public class Pyramid {
         if (this == o) return true;
         if (!(o instanceof Pyramid)) return false;
         Pyramid pyramid = (Pyramid) o;
-        return pyramidId == pyramid.pyramidId && Arrays.equals(points, pyramid.points);
+        return pyramid.shapeId == shapeId
+                && pyramid.sideLength == sideLength
+                && bottomCenter.equals(pyramid.bottomCenter)
+                && top.equals(pyramid.top);
     }
 
     public boolean equalsIgnoreId(Object o) {
         if (this == o) return true;
         if (!(o instanceof Pyramid)) return false;
         Pyramid pyramid = (Pyramid) o;
-        return Arrays.equals(points, pyramid.points);
+        return pyramid.sideLength == sideLength
+                && bottomCenter.equalsIgnoreId(pyramid.bottomCenter)
+                && top.equalsIgnoreId(pyramid.top);
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(points);
+        return (bottomCenter.hashCode() + top.hashCode() + sideLength) * shapeId;
     }
 }

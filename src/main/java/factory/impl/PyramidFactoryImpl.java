@@ -3,6 +3,7 @@ package factory.impl;
 import entity.Point;
 import entity.Pyramid;
 import factory.PyramidFactory;
+import service.impl.PyramidServiceImpl;
 
 import java.util.List;
 
@@ -12,17 +13,24 @@ public class PyramidFactoryImpl implements PyramidFactory {
             return create();
         }
         PointFactoryImpl factory = new PointFactoryImpl();
-        double halfLength = cord.get(3) / 2.;
-        Point one = factory.create(cord.get(0) - halfLength, cord.get(1) - halfLength, cord.get(2));
-        Point two = factory.create(cord.get(0) - halfLength, cord.get(1) + halfLength, cord.get(2));
-        Point three = factory.create(cord.get(0) + halfLength, cord.get(1) + halfLength, cord.get(2));
-        Point four = factory.create(cord.get(0) + halfLength, cord.get(1) - halfLength, cord.get(2));
+        Point bottom = factory.create(cord.get(0), cord.get(1), cord.get(2));
         Point top = factory.create(cord.get(0), cord.get(1), cord.get(4));
-        return new Pyramid(new Point[]{one, two, three, four, top});
+        int length = cord.get(3);
+
+        final PyramidServiceImpl service = new PyramidServiceImpl();
+        if(service.isPyramid(bottom, top, length)) {
+            return new Pyramid(bottom, top, length);
+        }
+        else {
+            return create();
+        }
     }
 
     public Pyramid create() {
-        return new Pyramid(new Point[]{new Point(-4, -4, 0), new Point(-4, 4, 0),
-                new Point(4, 4, 0), new Point(4, -4, 0), new Point(0, 0, 8)});
+        PointFactoryImpl factory = new PointFactoryImpl();
+        Point bottom = factory.create(0, 0, 0);
+        Point top = factory.create(0, 0, 5);
+        int length = 5;
+        return new Pyramid(bottom, top, length);
     }
 }

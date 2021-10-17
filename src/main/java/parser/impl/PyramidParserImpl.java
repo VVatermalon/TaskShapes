@@ -28,7 +28,6 @@ public class PyramidParserImpl implements PyramidParser {
                     int parsedNumber = Integer.parseInt(number);
                     cordPyramid.add(parsedNumber);
                 }
-                ;
                 Pyramid pyramid = factory.createSimple(cordPyramid);
                 output.add(pyramid);
                 cordPyramid.clear();

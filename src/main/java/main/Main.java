@@ -20,6 +20,5 @@ public class Main {
         PyramidParserImpl parser = new PyramidParserImpl();
         List<Pyramid> pyramids = parser.parse(readerResult);
         PyramidServiceImpl service = new PyramidServiceImpl();
-        pyramids.forEach(p->logger.info(service.isPyramid(p.getPoints())));
     }
 }
