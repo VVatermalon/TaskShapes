@@ -1,18 +1,23 @@
 package entity;
 
+import observer.Observable;
+import observer.Observer;
+import observer.PyramidEvent;
+import observer.impl.PyramidObserver;
 import service.impl.PyramidServiceImpl;
+import warehouse.WareHouse;
 
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Pyramid extends Shape {
-    private static int count = 0;
+public class Pyramid extends Shape implements Observable {
     private Point bottomCenter;
     private Point top;
     private int sideLength;
+    private Observer observer;
 
-    public Pyramid(Point bottomCenter, Point top, int sideLength) {
-        shapeId = count++;
+    public Pyramid(int shapeId, Point bottomCenter, Point top, int sideLength) {
+        this.shapeId = shapeId;
         this.bottomCenter = bottomCenter;
         this.top = top;
         this.sideLength = sideLength;
@@ -29,6 +34,7 @@ public class Pyramid extends Shape {
     public void setBottomCenter(Point bottomCenter) {
         if (bottomCenter != null) {
             this.bottomCenter = bottomCenter;
+            notifyObservers();
         }
     }
 
@@ -39,6 +45,7 @@ public class Pyramid extends Shape {
     public void setTop(Point top) {
         if(top!= null) {
             this.top = top;
+            notifyObservers();
         }
     }
 
@@ -47,7 +54,10 @@ public class Pyramid extends Shape {
     }
 
     public void setSideLength(int sideLength) {
-        this.sideLength = sideLength;
+        if (sideLength > 0) {
+            this.sideLength = sideLength;
+            notifyObservers();
+        }
     }
 
     @Override
@@ -84,5 +94,26 @@ public class Pyramid extends Shape {
     @Override
     public int hashCode() {
         return (bottomCenter.hashCode() + top.hashCode() + sideLength) * shapeId;
+    }
+
+    @Override
+    public void attach() {
+        if(observer == null) {
+            observer = new PyramidObserver();
+            //WareHouse.getInstance().putParameters(shapeId, );
+        }
+    }
+
+    @Override
+    public void detach() {
+        observer = null;
+    }
+
+    @Override
+    public void notifyObservers() {
+        if (observer != null) {
+            PyramidEvent event = new PyramidEvent(this);
+            observer.parameterChanged(event);
+        }
     }
 }

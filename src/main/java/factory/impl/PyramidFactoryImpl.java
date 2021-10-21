@@ -4,11 +4,13 @@ import entity.Point;
 import entity.Pyramid;
 import factory.PyramidFactory;
 import service.impl.PyramidServiceImpl;
+import util.IdGenerator;
+import warehouse.WareHouse;
 
 import java.util.List;
 
 public class PyramidFactoryImpl implements PyramidFactory {
-    public Pyramid createSimple(List<Integer> cord) {
+    public Pyramid create(List<Integer> cord) {
         if (cord == null || cord.size() != 5) {
             return create();
         }
@@ -19,7 +21,8 @@ public class PyramidFactoryImpl implements PyramidFactory {
 
         final PyramidServiceImpl service = new PyramidServiceImpl();
         if(service.isPyramid(bottom, top, length)) {
-            return new Pyramid(bottom, top, length);
+            int id = IdGenerator.GenerateId();
+            return new Pyramid(id, bottom, top, length);
         }
         else {
             return create();
@@ -31,6 +34,7 @@ public class PyramidFactoryImpl implements PyramidFactory {
         Point bottom = factory.create(0, 0, 0);
         Point top = factory.create(0, 0, 5);
         int length = 5;
-        return new Pyramid(bottom, top, length);
+        int id = IdGenerator.GenerateId();
+        return new Pyramid(id, bottom, top, length);
     }
 }

@@ -10,30 +10,25 @@ import validator.impl.PyramidValidatorImpl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PyramidParserImpl implements PyramidParser {
     static final Logger logger = LogManager.getLogger();
     static final String SPLITTER = "\\s";
+    static final String EXTRA_SPACE = "\\s+";
+    static final String SPACE = " ";
 
-    public List<Pyramid> parse(List<String> input) {
+    public List<Integer> parse(String input) {
         PyramidValidatorImpl validator = new PyramidValidatorImpl();
-        PyramidFactoryImpl factory = new PyramidFactoryImpl();
-        ArrayList<Integer> cordPyramid = new ArrayList<>(0);
-        ArrayList<Pyramid> output = new ArrayList<>(0);
+        List<Integer> output;
 
-        for (String line : input) {
-            if (validator.validate(line)) {
-                String[] stringNumbers = line.trim().split(SPLITTER);
-                for (String number : stringNumbers) {
-                    int parsedNumber = Integer.parseInt(number);
-                    cordPyramid.add(parsedNumber);
-                }
-                Pyramid pyramid = factory.createSimple(cordPyramid);
-                output.add(pyramid);
-                cordPyramid.clear();
-            } else {
-                logger.warn("Line didn't parsed: " + line);
-            }
+        if (validator.validate(input)) {
+            output = Arrays.stream(input.trim().replaceAll(EXTRA_SPACE, SPACE).split(SPLITTER))
+                    .map(Integer::parseInt)
+                    .collect(Collectors.toList());
+        } else {
+            output = new ArrayList<>(0);
+            logger.warn("Line didn't parse: " + input);
         }
         return output;
     }

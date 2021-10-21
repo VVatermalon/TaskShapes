@@ -5,5 +5,5 @@ import entity.Pyramid;
 import java.util.List;
 
 public interface PyramidParser {
-    List<Pyramid> parse(List<String> input);
+    List<Integer> parse(String input);
 }

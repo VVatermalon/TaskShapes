@@ -3,13 +3,12 @@ package entity;
 import java.util.Objects;
 
 public class Point extends Shape {
-    private static int count = 0;
     private double x;
     private double y;
     private double z;
 
-    public Point(double x, double y, double z) {
-        shapeId = count++;
+    public Point(int shapeId, double x, double y, double z) {
+        this.shapeId = shapeId;
         this.x = x;
         this.y = y;
         this.z = z;
