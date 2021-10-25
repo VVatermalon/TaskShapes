@@ -50,7 +50,7 @@ public class PyramidServiceImpl implements PyramidService {
         double bottomArea = sideLength * sideLength;
         double height = Math.abs(pyramid.getTop().getZ() - pyramid.getBottomCenter().getZ());
         double apothem = Math.sqrt(Math.pow(sideLength / 2, 2) + Math.pow(height, 2));
-        return OptionalDouble.of((sideLength * 4 * apothem) / 2 + bottomArea);
+        return OptionalDouble.of(2 * sideLength * apothem + bottomArea);
     }
 
     public OptionalDouble calculateVolumeRatio(Pyramid pyramid, double Z) { // плоскость параллельная OXY

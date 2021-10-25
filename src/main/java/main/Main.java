@@ -1,14 +1,18 @@
 package main;
 
 import entity.Pyramid;
+import entity.pyramidcomparator.VolumeComparator;
 import factory.impl.PyramidFactoryImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import parser.impl.PyramidParserImpl;
 import reader.impl.CustomFileReaderImpl;
+import repository.PyramidRepository;
+import repository.impl.MinAreaSpecification;
 import service.impl.PyramidServiceImpl;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -30,5 +34,10 @@ public class Main {
         }
         pyramids.forEach(Pyramid::attach);
         pyramids.forEach(p -> p.setSideLength(p.getSideLength() - 1));
+
+        PyramidRepository repository = new PyramidRepository();
+        repository.addAll(pyramids);
+        logger.info(repository.sort(new VolumeComparator()));
+        logger.info(repository.query(new MinAreaSpecification(10)));
     }
 }

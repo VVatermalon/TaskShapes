@@ -2,12 +2,14 @@ package repository;
 
 import entity.Pyramid;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Repository {
-    private List<Pyramid> pyramids;
+public class PyramidRepository {
+    private List<Pyramid> pyramids = new ArrayList<>(1);
 
     public boolean add(Pyramid pyramid) {
         return pyramids.add(pyramid);
@@ -38,5 +40,9 @@ public class Repository {
                 .filter(specification::specify)
                 .collect(Collectors.toList());
         return result;
+    }
+
+    public List<Pyramid> sort(Comparator<? super Pyramid> c) {
+        return pyramids.stream().sorted(c).collect(Collectors.toList());
     }
 }
