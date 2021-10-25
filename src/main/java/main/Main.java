@@ -35,7 +35,7 @@ public class Main {
         pyramids.forEach(Pyramid::attach);
         pyramids.forEach(p -> p.setSideLength(p.getSideLength() - 1));
 
-        PyramidRepository repository = new PyramidRepository();
+        PyramidRepository repository = PyramidRepository.getInstance();
         repository.addAll(pyramids);
         logger.info(repository.sort(new VolumeComparator()));
         logger.info(repository.query(new MinAreaSpecification(10)));

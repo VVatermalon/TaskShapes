@@ -20,16 +20,15 @@ public class PyramidParserImpl implements PyramidParser {
 
     public List<Integer> parse(String input) {
         PyramidValidatorImpl validator = new PyramidValidatorImpl();
-        List<Integer> output;
+        ArrayList<Integer> output = new ArrayList<>(0);
 
-        if (validator.validate(input)) {
-            output = Arrays.stream(input.trim().replaceAll(EXTRA_SPACE, SPACE).split(SPLITTER))
-                    .map(Integer::parseInt)
-                    .collect(Collectors.toList());
-        } else {
-            output = new ArrayList<>(0);
+        if (!validator.validate(input)) {
             logger.warn("Line didn't parse: " + input);
+            return output;
         }
+        output = Arrays.stream(input.trim().replaceAll(EXTRA_SPACE, SPACE).split(SPLITTER))
+                .map(Integer::parseInt)
+                .collect(Collectors.toCollection(ArrayList::new));
         return output;
     }
 }

@@ -1,6 +1,7 @@
 package repository;
 
 import entity.Pyramid;
+import warehouse.WareHouse;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +10,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class PyramidRepository {
-    private List<Pyramid> pyramids = new ArrayList<>(1);
+    private static final PyramidRepository instance = new PyramidRepository();
+    private final List<Pyramid> pyramids = new ArrayList<>(1);
+
+    private PyramidRepository() {}
+
+    public static PyramidRepository getInstance() {
+        return instance;
+    }
 
     public boolean add(Pyramid pyramid) {
         return pyramids.add(pyramid);

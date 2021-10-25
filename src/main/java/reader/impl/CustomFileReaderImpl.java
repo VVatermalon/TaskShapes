@@ -18,18 +18,20 @@ public class CustomFileReaderImpl implements CustomFileReader {
 
     public List<String> readFromFile(String src) {
         try {
+            ArrayList<String> output = new ArrayList<>(0);
             if (src == null) {
                 logger.error("Null parameter");
-                return new ArrayList<>(0);
+                return output;
             }
             ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
             URL resource = classLoader.getResource(src);
-            if (resource != null) {
-                return Files.lines(Paths.get(resource.toURI())).collect(Collectors.toList());
-            } else {
+            if (resource == null) {
                 logger.error("Null parameter");
-                return new ArrayList<>(0);
+                return output;
             }
+            output = Files.lines(Paths.get(resource.toURI()))
+                    .collect(Collectors.toCollection(ArrayList::new));
+            return output;
         } catch (IOException | URISyntaxException e) {
             logger.error(e);
             return new ArrayList<>(0);
