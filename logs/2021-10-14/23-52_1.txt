@@ -1,0 +1,8 @@
+2021-10-14 23:52:23 [main] main.Main [main] [22] INFO  - [0 0 0 +5 10, -2 -2 -2 3 -3, 4 3 1 4 15]
+2021-10-14 23:52:23 [main] main.Main [forEach] [1257] INFO  - Pyramid{pyramidId=0, points=[Point{pointId=5, x=-4.0, y=-4.0, z=0.0}, Point{pointId=6, x=-4.0, y=4.0, z=0.0}, Point{pointId=7, x=4.0, y=4.0, z=0.0}, Point{pointId=8, x=4.0, y=-4.0, z=0.0}, Point{pointId=9, x=0.0, y=0.0, z=8.0}]}
+2021-10-14 23:52:23 [main] main.Main [forEach] [1257] INFO  - Pyramid{pyramidId=1, points=[Point{pointId=15, x=-4.0, y=-4.0, z=0.0}, Point{pointId=16, x=-4.0, y=4.0, z=0.0}, Point{pointId=17, x=4.0, y=4.0, z=0.0}, Point{pointId=18, x=4.0, y=-4.0, z=0.0}, Point{pointId=19, x=0.0, y=0.0, z=8.0}]}
+2021-10-14 23:52:23 [main] main.Main [forEach] [1257] INFO  - Pyramid{pyramidId=2, points=[Point{pointId=25, x=-4.0, y=-4.0, z=0.0}, Point{pointId=26, x=-4.0, y=4.0, z=0.0}, Point{pointId=27, x=4.0, y=4.0, z=0.0}, Point{pointId=28, x=4.0, y=-4.0, z=0.0}, Point{pointId=29, x=0.0, y=0.0, z=8.0}]}
+2021-10-14 23:52:23 [main] main.Main [lambda$main$0] [27] INFO  - false
+2021-10-14 23:52:23 [main] main.Main [lambda$main$0] [27] INFO  - false
+2021-10-14 23:52:23 [main] main.Main [lambda$main$0] [27] INFO  - false
+2021-10-14 23:52:52 [main] main.Main [main] [22] INFO  - [0 0 0 +5 10, -2 -2 -2 3 -3, 4 3 1 4 15]
