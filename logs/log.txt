@@ -1,1 +1,2 @@
-2021-10-30 08:37:45 [main] by.skarulskaya.parser.impl.PyramidParserImpl [parse] [24] WARN  - Line didn't parse: 10 10 10   3 3 -4
+2021-10-30 08:53:47 [main] by.skarulskaya.reader.impl.CustomFileReaderImpl [readFromFile] [30] ERROR - Null parameter
+2021-10-30 08:53:47 [main] by.skarulskaya.reader.impl.CustomFileReaderImpl [readFromFile] [24] ERROR - Null parameter

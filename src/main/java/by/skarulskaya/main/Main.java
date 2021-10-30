@@ -2,6 +2,7 @@ package by.skarulskaya.main;
 
 import by.skarulskaya.entity.Pyramid;
 import by.skarulskaya.entity.pyramidcomparator.VolumeComparator;
+import by.skarulskaya.exception.PyramidCustomException;
 import by.skarulskaya.factory.impl.PyramidFactoryImpl;
 import by.skarulskaya.parser.impl.PyramidParserImpl;
 import by.skarulskaya.reader.impl.CustomFileReaderImpl;
@@ -19,23 +20,27 @@ public class Main {
 
     public static void main(String[] args) {
         CustomFileReaderImpl reader = new CustomFileReaderImpl();
-        List<String> readerResult = reader.readFromFile(FILE_SRC);
-        logger.info(readerResult);
-        PyramidParserImpl parser = new PyramidParserImpl();
-        PyramidFactoryImpl factory = new PyramidFactoryImpl();
-        List<Pyramid> pyramids = new ArrayList<>(0);
-        for(String line: readerResult) {
-            List<Integer> parserResult = parser.parse(line);
-            logger.info(parserResult);
-            Pyramid pyramid = factory.create(parserResult);
-            pyramids.add(pyramid);
-        }
-        pyramids.forEach(Pyramid::attach);
-        pyramids.forEach(p -> p.setSideLength(p.getSideLength() - 1));
+        try {
+            List<String> readerResult = reader.readFromFile(FILE_SRC);
+            logger.info(readerResult);
+            PyramidParserImpl parser = new PyramidParserImpl();
+            PyramidFactoryImpl factory = new PyramidFactoryImpl();
+            List<Pyramid> pyramids = new ArrayList<>(0);
+            for (String line : readerResult) {
+                List<Integer> parserResult = parser.parse(line);
+                logger.info(parserResult);
+                Pyramid pyramid = factory.create(parserResult);
+                pyramids.add(pyramid);
+            }
+            pyramids.forEach(Pyramid::attach);
+            pyramids.forEach(p -> p.setSideLength(p.getSideLength() - 1));
 
-        PyramidRepository repository = PyramidRepository.getInstance();
-        repository.addAll(pyramids);
-        logger.info(repository.sort(new VolumeComparator()));
-        logger.info(repository.query(new MinAreaSpecification(10)));
+            PyramidRepository repository = PyramidRepository.getInstance();
+            repository.addAll(pyramids);
+            logger.info(repository.sort(new VolumeComparator()));
+            logger.info(repository.query(new MinAreaSpecification(10)));
+        } catch (PyramidCustomException e) {
+            logger.error(e);
+        }
     }
 }

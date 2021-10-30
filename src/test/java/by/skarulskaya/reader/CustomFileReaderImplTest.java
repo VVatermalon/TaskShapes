@@ -1,5 +1,6 @@
 package by.skarulskaya.reader;
 
+import by.skarulskaya.exception.PyramidCustomException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import by.skarulskaya.reader.impl.CustomFileReaderImpl;
@@ -23,8 +24,13 @@ public class CustomFileReaderImplTest {
 
     @Test(dataProvider = "readerInput")
     public void readFromFileTest(String src, String[] expectedArray) {
-        List<String> actual = READER.readFromFile(src);
-        List<String> expected = Arrays.asList(expectedArray);
-        assertEquals(actual, expected);
+        try {
+            List<String> actual = READER.readFromFile(src);
+            List<String> expected = Arrays.asList(expectedArray);
+            assertEquals(actual, expected);
+        } catch (PyramidCustomException e) {
+            fail(e.getMessage());
+        }
+
     }
 }

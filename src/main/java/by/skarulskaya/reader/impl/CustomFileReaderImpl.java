@@ -1,5 +1,6 @@
 package by.skarulskaya.reader.impl;
 
+import by.skarulskaya.exception.PyramidCustomException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import by.skarulskaya.reader.CustomFileReader;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 public class CustomFileReaderImpl implements CustomFileReader {
     static final Logger logger = LogManager.getLogger();
 
-    public List<String> readFromFile(String src) {
+    public List<String> readFromFile(String src) throws PyramidCustomException {
         try {
             ArrayList<String> output = new ArrayList<>(0);
             if (src == null) {
@@ -34,7 +35,7 @@ public class CustomFileReaderImpl implements CustomFileReader {
             return output;
         } catch (IOException | URISyntaxException e) {
             logger.error(e);
-            return new ArrayList<>(0);
+            throw new PyramidCustomException("Cannot read from file " + src, e);
         }
     }
 }
