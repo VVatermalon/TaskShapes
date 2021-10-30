@@ -1,16 +1,16 @@
-2021-10-15 00:03:15 [main] main.Main [main] [22] INFO  - [0 0 0 +5 10, -2 -2 -2 3 -3, 4 3 1 4 15, 0j 0 0 4 20, 2 2 2 2 2 2 2 2, 2 2 2 -3 2, 0 0 0 3 0, 1 1 1 0 1]
-2021-10-15 00:03:15 [main] parser.impl.PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 0j 0 0 4 20
-2021-10-15 00:03:15 [main] parser.impl.PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 2 2 2 2 2 2 2 2
-2021-10-15 00:03:15 [main] parser.impl.PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 2 2 2 -3 2
-2021-10-15 00:03:15 [main] service.impl.PyramidServiceImpl [isPyramid] [30] WARN  - One plane [Point{pointId=15, x=-1.5, y=-1.5, z=0.0}, Point{pointId=16, x=-1.5, y=1.5, z=0.0}, Point{pointId=17, x=1.5, y=1.5, z=0.0}, Point{pointId=18, x=1.5, y=-1.5, z=0.0}, Point{pointId=19, x=0.0, y=0.0, z=0.0}]
-2021-10-15 00:03:15 [main] service.impl.PyramidServiceImpl [isPyramid] [22] WARN  - Same points [Point{pointId=25, x=1.0, y=1.0, z=1.0}, Point{pointId=26, x=1.0, y=1.0, z=1.0}, Point{pointId=27, x=1.0, y=1.0, z=1.0}, Point{pointId=28, x=1.0, y=1.0, z=1.0}, Point{pointId=29, x=1.0, y=1.0, z=1.0}]
-2021-10-15 00:03:15 [main] main.Main [forEach] [1257] INFO  - Pyramid{pyramidId=0, points=[Point{pointId=0, x=-2.5, y=-2.5, z=0.0}, Point{pointId=1, x=-2.5, y=2.5, z=0.0}, Point{pointId=2, x=2.5, y=2.5, z=0.0}, Point{pointId=3, x=2.5, y=-2.5, z=0.0}, Point{pointId=4, x=0.0, y=0.0, z=10.0}]}
-2021-10-15 00:03:15 [main] main.Main [forEach] [1257] INFO  - Pyramid{pyramidId=1, points=[Point{pointId=5, x=-3.5, y=-3.5, z=-2.0}, Point{pointId=6, x=-3.5, y=-0.5, z=-2.0}, Point{pointId=7, x=-0.5, y=-0.5, z=-2.0}, Point{pointId=8, x=-0.5, y=-3.5, z=-2.0}, Point{pointId=9, x=-2.0, y=-2.0, z=-3.0}]}
-2021-10-15 00:03:15 [main] main.Main [forEach] [1257] INFO  - Pyramid{pyramidId=2, points=[Point{pointId=10, x=2.0, y=1.0, z=1.0}, Point{pointId=11, x=2.0, y=5.0, z=1.0}, Point{pointId=12, x=6.0, y=5.0, z=1.0}, Point{pointId=13, x=6.0, y=1.0, z=1.0}, Point{pointId=14, x=4.0, y=3.0, z=15.0}]}
-2021-10-15 00:03:15 [main] main.Main [forEach] [1257] INFO  - Pyramid{pyramidId=3, points=[Point{pointId=20, x=-4.0, y=-4.0, z=0.0}, Point{pointId=21, x=-4.0, y=4.0, z=0.0}, Point{pointId=22, x=4.0, y=4.0, z=0.0}, Point{pointId=23, x=4.0, y=-4.0, z=0.0}, Point{pointId=24, x=0.0, y=0.0, z=8.0}]}
-2021-10-15 00:03:15 [main] main.Main [forEach] [1257] INFO  - Pyramid{pyramidId=4, points=[Point{pointId=30, x=-4.0, y=-4.0, z=0.0}, Point{pointId=31, x=-4.0, y=4.0, z=0.0}, Point{pointId=32, x=4.0, y=4.0, z=0.0}, Point{pointId=33, x=4.0, y=-4.0, z=0.0}, Point{pointId=34, x=0.0, y=0.0, z=8.0}]}
-2021-10-15 00:03:15 [main] main.Main [lambda$main$0] [27] INFO  - true
-2021-10-15 00:03:15 [main] main.Main [lambda$main$0] [27] INFO  - true
-2021-10-15 00:03:15 [main] main.Main [lambda$main$0] [27] INFO  - true
-2021-10-15 00:03:15 [main] main.Main [lambda$main$0] [27] INFO  - true
-2021-10-15 00:03:15 [main] main.Main [lambda$main$0] [27] INFO  - true
+2021-10-15 00:03:15 [main] Main [main] [22] INFO  - [0 0 0 +5 10, -2 -2 -2 3 -3, 4 3 1 4 15, 0j 0 0 4 20, 2 2 2 2 2 2 2 2, 2 2 2 -3 2, 0 0 0 3 0, 1 1 1 0 1]
+2021-10-15 00:03:15 [main] PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 0j 0 0 4 20
+2021-10-15 00:03:15 [main] PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 2 2 2 2 2 2 2 2
+2021-10-15 00:03:15 [main] PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 2 2 2 -3 2
+2021-10-15 00:03:15 [main] PyramidServiceImpl [isPyramid] [30] WARN  - One plane [Point{pointId=15, x=-1.5, y=-1.5, z=0.0}, Point{pointId=16, x=-1.5, y=1.5, z=0.0}, Point{pointId=17, x=1.5, y=1.5, z=0.0}, Point{pointId=18, x=1.5, y=-1.5, z=0.0}, Point{pointId=19, x=0.0, y=0.0, z=0.0}]
+2021-10-15 00:03:15 [main] PyramidServiceImpl [isPyramid] [22] WARN  - Same points [Point{pointId=25, x=1.0, y=1.0, z=1.0}, Point{pointId=26, x=1.0, y=1.0, z=1.0}, Point{pointId=27, x=1.0, y=1.0, z=1.0}, Point{pointId=28, x=1.0, y=1.0, z=1.0}, Point{pointId=29, x=1.0, y=1.0, z=1.0}]
+2021-10-15 00:03:15 [main] Main [forEach] [1257] INFO  - Pyramid{pyramidId=0, points=[Point{pointId=0, x=-2.5, y=-2.5, z=0.0}, Point{pointId=1, x=-2.5, y=2.5, z=0.0}, Point{pointId=2, x=2.5, y=2.5, z=0.0}, Point{pointId=3, x=2.5, y=-2.5, z=0.0}, Point{pointId=4, x=0.0, y=0.0, z=10.0}]}
+2021-10-15 00:03:15 [main] Main [forEach] [1257] INFO  - Pyramid{pyramidId=1, points=[Point{pointId=5, x=-3.5, y=-3.5, z=-2.0}, Point{pointId=6, x=-3.5, y=-0.5, z=-2.0}, Point{pointId=7, x=-0.5, y=-0.5, z=-2.0}, Point{pointId=8, x=-0.5, y=-3.5, z=-2.0}, Point{pointId=9, x=-2.0, y=-2.0, z=-3.0}]}
+2021-10-15 00:03:15 [main] Main [forEach] [1257] INFO  - Pyramid{pyramidId=2, points=[Point{pointId=10, x=2.0, y=1.0, z=1.0}, Point{pointId=11, x=2.0, y=5.0, z=1.0}, Point{pointId=12, x=6.0, y=5.0, z=1.0}, Point{pointId=13, x=6.0, y=1.0, z=1.0}, Point{pointId=14, x=4.0, y=3.0, z=15.0}]}
+2021-10-15 00:03:15 [main] Main [forEach] [1257] INFO  - Pyramid{pyramidId=3, points=[Point{pointId=20, x=-4.0, y=-4.0, z=0.0}, Point{pointId=21, x=-4.0, y=4.0, z=0.0}, Point{pointId=22, x=4.0, y=4.0, z=0.0}, Point{pointId=23, x=4.0, y=-4.0, z=0.0}, Point{pointId=24, x=0.0, y=0.0, z=8.0}]}
+2021-10-15 00:03:15 [main] Main [forEach] [1257] INFO  - Pyramid{pyramidId=4, points=[Point{pointId=30, x=-4.0, y=-4.0, z=0.0}, Point{pointId=31, x=-4.0, y=4.0, z=0.0}, Point{pointId=32, x=4.0, y=4.0, z=0.0}, Point{pointId=33, x=4.0, y=-4.0, z=0.0}, Point{pointId=34, x=0.0, y=0.0, z=8.0}]}
+2021-10-15 00:03:15 [main] Main [lambda$main$0] [27] INFO  - true
+2021-10-15 00:03:15 [main] Main [lambda$main$0] [27] INFO  - true
+2021-10-15 00:03:15 [main] Main [lambda$main$0] [27] INFO  - true
+2021-10-15 00:03:15 [main] Main [lambda$main$0] [27] INFO  - true
+2021-10-15 00:03:15 [main] Main [lambda$main$0] [27] INFO  - true

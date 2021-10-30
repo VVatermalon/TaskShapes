@@ -1,0 +1,24 @@
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [23] INFO  - [0 0 0 +5 10, -2 -2 -2 3 -3, 4 3 1 4 15, 0j 0 0 4 20, 2 2 2 2 2 2 2 2, 2 2 2 -3 2, 0 0 0 3 0, 1 1 1 0 1]
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [29] INFO  - [0, 0, 0, 5, 10]
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [29] INFO  - [-2, -2, -2, 3, -3]
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [29] INFO  - [4, 3, 1, 4, 15]
+2021-10-30 08:36:09 [main] by.skarulskaya.parser.impl.PyramidParserImpl [parse] [24] WARN  - Line didn't parse: 0j 0 0 4 20
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [29] INFO  - []
+2021-10-30 08:36:09 [main] by.skarulskaya.parser.impl.PyramidParserImpl [parse] [24] WARN  - Line didn't parse: 2 2 2 2 2 2 2 2
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [29] INFO  - []
+2021-10-30 08:36:09 [main] by.skarulskaya.parser.impl.PyramidParserImpl [parse] [24] WARN  - Line didn't parse: 2 2 2 -3 2
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [29] INFO  - []
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [29] INFO  - [0, 0, 0, 3, 0]
+2021-10-30 08:36:09 [main] by.skarulskaya.service.impl.PyramidServiceImpl [isPyramid] [20] WARN  - One plane: Point{pointId=18, x=0.0, y=0.0, z=0.0}Point{pointId=19, x=0.0, y=0.0, z=0.0}
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [29] INFO  - [1, 1, 1, 0, 1]
+2021-10-30 08:36:09 [main] by.skarulskaya.service.impl.PyramidServiceImpl [isPyramid] [16] WARN  - Bottom side length is incorrect: 0
+2021-10-30 08:36:09 [main] by.skarulskaya.warehouse.WareHouse [putParameters] [29] INFO  - Pyramid changed id: 2, area: 97,584312, volume: 53,333333
+2021-10-30 08:36:09 [main] by.skarulskaya.warehouse.WareHouse [putParameters] [29] INFO  - Pyramid changed id: 5, area: 9,656854, volume: 1,333333
+2021-10-30 08:36:09 [main] by.skarulskaya.warehouse.WareHouse [putParameters] [29] INFO  - Pyramid changed id: 8, area: 93,480767, volume: 42,000000
+2021-10-30 08:36:09 [main] by.skarulskaya.warehouse.WareHouse [putParameters] [29] INFO  - Pyramid changed id: 11, area: 59,081318, volume: 26,666667
+2021-10-30 08:36:09 [main] by.skarulskaya.warehouse.WareHouse [putParameters] [29] INFO  - Pyramid changed id: 14, area: 59,081318, volume: 26,666667
+2021-10-30 08:36:09 [main] by.skarulskaya.warehouse.WareHouse [putParameters] [29] INFO  - Pyramid changed id: 17, area: 59,081318, volume: 26,666667
+2021-10-30 08:36:09 [main] by.skarulskaya.warehouse.WareHouse [putParameters] [29] INFO  - Pyramid changed id: 22, area: 59,081318, volume: 26,666667
+2021-10-30 08:36:09 [main] by.skarulskaya.warehouse.WareHouse [putParameters] [29] INFO  - Pyramid changed id: 27, area: 59,081318, volume: 26,666667
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [38] INFO  - [Pyramid{bottomCenter=Point{pointId=3, x=-2.0, y=-2.0, z=-2.0}, top=Point{pointId=4, x=-2.0, y=-2.0, z=-3.0}, sideLength=2, shapeId=5}, Pyramid{bottomCenter=Point{pointId=9, x=0.0, y=0.0, z=0.0}, top=Point{pointId=10, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=11}, Pyramid{bottomCenter=Point{pointId=12, x=0.0, y=0.0, z=0.0}, top=Point{pointId=13, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=14}, Pyramid{bottomCenter=Point{pointId=15, x=0.0, y=0.0, z=0.0}, top=Point{pointId=16, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=17}, Pyramid{bottomCenter=Point{pointId=20, x=0.0, y=0.0, z=0.0}, top=Point{pointId=21, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=22}, Pyramid{bottomCenter=Point{pointId=25, x=0.0, y=0.0, z=0.0}, top=Point{pointId=26, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=27}, Pyramid{bottomCenter=Point{pointId=6, x=4.0, y=3.0, z=1.0}, top=Point{pointId=7, x=4.0, y=3.0, z=15.0}, sideLength=3, shapeId=8}, Pyramid{bottomCenter=Point{pointId=0, x=0.0, y=0.0, z=0.0}, top=Point{pointId=1, x=0.0, y=0.0, z=10.0}, sideLength=4, shapeId=2}]
+2021-10-30 08:36:09 [main] by.skarulskaya.main.Main [main] [39] INFO  - [Pyramid{bottomCenter=Point{pointId=0, x=0.0, y=0.0, z=0.0}, top=Point{pointId=1, x=0.0, y=0.0, z=10.0}, sideLength=4, shapeId=2}, Pyramid{bottomCenter=Point{pointId=6, x=4.0, y=3.0, z=1.0}, top=Point{pointId=7, x=4.0, y=3.0, z=15.0}, sideLength=3, shapeId=8}, Pyramid{bottomCenter=Point{pointId=9, x=0.0, y=0.0, z=0.0}, top=Point{pointId=10, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=11}, Pyramid{bottomCenter=Point{pointId=12, x=0.0, y=0.0, z=0.0}, top=Point{pointId=13, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=14}, Pyramid{bottomCenter=Point{pointId=15, x=0.0, y=0.0, z=0.0}, top=Point{pointId=16, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=17}, Pyramid{bottomCenter=Point{pointId=20, x=0.0, y=0.0, z=0.0}, top=Point{pointId=21, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=22}, Pyramid{bottomCenter=Point{pointId=25, x=0.0, y=0.0, z=0.0}, top=Point{pointId=26, x=0.0, y=0.0, z=5.0}, sideLength=4, shapeId=27}]

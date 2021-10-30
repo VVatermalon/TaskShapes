@@ -1,4 +1,4 @@
-2021-10-14 21:14:29 [main] main.Main [main] [21] INFO  - [0 0 0 +5 10, -2 -2 -2 3 -3, 4 3 1 4 15]
-2021-10-14 21:14:29 [main] parser.impl.PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 0 0 0 +5 10
-2021-10-14 21:14:29 [main] parser.impl.PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: -2 -2 -2 3 -3
-2021-10-14 21:14:29 [main] parser.impl.PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 4 3 1 4 15
+2021-10-14 21:14:29 [main] Main [main] [21] INFO  - [0 0 0 +5 10, -2 -2 -2 3 -3, 4 3 1 4 15]
+2021-10-14 21:14:29 [main] PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 0 0 0 +5 10
+2021-10-14 21:14:29 [main] PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: -2 -2 -2 3 -3
+2021-10-14 21:14:29 [main] PyramidParserImpl [parse] [36] WARN  - Line didn't parsed: 4 3 1 4 15
